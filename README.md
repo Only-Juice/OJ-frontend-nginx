@@ -6,14 +6,14 @@
 
 ```
 nginx/
-├── Dockerfile              # Docker 映像建構檔案4. 重新建構並啟動容器
+├── Dockerfile    # Docker 映像建構檔案
 ├── .dockerignore # Docker 忽略檔案
 ├── conf/
-│ └── nginx.conf # Nginx 自定義配置檔案
+│ └── nginx.conf  # Nginx 自定義配置檔案
 ├── html/
-│ ├── index.html # 主頁面
-│ └── 50x.html # 錯誤頁面
-└── README.md # 說明文件
+│ ├── index.html  # 主頁面
+│ └── 50x.html    # 錯誤頁面
+└── README.md     # 說明文件
 
 ```
 
