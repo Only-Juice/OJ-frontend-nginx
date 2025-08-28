@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歡迎使用 Docker Nginx!</title>
+    <style>
+        html {
+            color-scheme: light dark;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">🐳</div>
+        <h1>歡迎使用 Docker Nginx!</h1>
+
+        <div class="status">
+            ✅ Nginx 伺服器正在正常運行
+        </div>
+
+        <p>如果您看到這個頁面，代表 Docker 中的 Nginx 網頁伺服器已經成功安裝並正常運作。</p>
+
+        <div class="info-box">
+            <h3>🔧 容器資訊</h3>
+            <ul>
+                <li><strong>映像：</strong> nginx:alpine</li>
+                <li><strong>設定檔：</strong> /etc/nginx/nginx.conf</li>
+                <li><strong>網頁目錄：</strong> /usr/share/nginx/html</li>
+                <li><strong>HTTP 埠號：</strong> 80 (重新導向到 HTTPS)</li>
+                <li><strong>HTTPS 埠號：</strong> 443</li>
+                <li><strong>SSL 憑證：</strong> /etc/ssl/certs/nginx.crt</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 有用的連結</h3>
+            <ul>
+                <li><a href="http://nginx.org/" target="_blank">Nginx 官方網站</a></li>
+                <li><a href="https://docs.docker.com/" target="_blank">Docker 文件</a></li>
+                <li><a href="/health" target="_blank">健康檢查端點</a></li>
+                <li><a href="https://oj.zre.tw/health" target="_blank">HTTPS 健康檢查</a></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><em>感謝您使用 Docker Nginx 範例！</em></p>
+            <p>🐳 由 Docker 強力驅動</p>
+        </div>
+    </div>
+</body>
+
+</html>
