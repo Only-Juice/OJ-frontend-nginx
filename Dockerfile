@@ -9,7 +9,7 @@ LABEL description="OJ-frontend Nginx Template"
 RUN rm /etc/nginx/conf.d/default.conf
 
 # 複製自定義的 nginx 配置檔案
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/nginx.conf.template /etc/nginx/nginx.conf.template
 
 # 複製網站內容到 nginx 預設目錄
 COPY html/ /usr/share/nginx/html/
@@ -28,5 +28,8 @@ EXPOSE 80 443
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD curl -f http://localhost/ || exit 1
 
+# 設定 NGINX_HOST 環境變數
+ENV NGINX_HOST=your.domain.com
+
 # 啟動 nginx (前景模式)
-CMD ["nginx", "-g", "daemon off;"]
+CMD envsubst '$NGINX_HOST' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'
