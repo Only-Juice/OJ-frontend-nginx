@@ -3,7 +3,7 @@ version: "3.8"
 services:
   nginx:
     build: .
-    container_name: custom-nginx
+    container_name: oj-frontend-nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -17,14 +17,13 @@ services:
       - nginx-logs:/var/log/nginx
     environment:
       - NGINX_HOST=oj.zre.tw
-      - NGINX_PORT=80
     networks:
       - nginx-network
     # 允許訪問宿主機服務
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
-      test: ["CMD", "curl", "-fk", "https://oj.zre.tw/health"]
+      test: ["CMD", "curl", "-fk", "https://${NGINX_HOST}/health"]
       interval: 30s
       timeout: 10s
       retries: 3
