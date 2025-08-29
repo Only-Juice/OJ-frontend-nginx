@@ -2,8 +2,8 @@
 FROM nginx:alpine
 
 # 建立者資訊
-LABEL maintainer="your-email@example.com"
-LABEL description="Custom Nginx Docker container"
+LABEL maintainer="me@zre.tw"
+LABEL description="OJ-frontend Nginx Template"
 
 # 移除預設的 nginx 配置檔案
 RUN rm /etc/nginx/conf.d/default.conf
